@@ -56,8 +56,17 @@ Array(200).fill().forEach(addStar);
 const textureLoader = new THREE.TextureLoader();
 
 // Background
-const spaceTexture = textureLoader.load('./img/space.jpg');
-scene.background = spaceTexture;
+const cortexTexture = textureLoader.load('./img/Cortex-Wallpaper.png');
+scene.background = cortexTexture;
+// Profile 
+const guyTexture = textureLoader.load('./img/high_res_profile.jpg');
+
+const guy = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: guyTexture })
+);
+
+scene.add(guy);
 
 //* Animation Loop 
 function animate() {
